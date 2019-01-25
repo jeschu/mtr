@@ -14,10 +14,10 @@ Mac OS is missing mtr tool. It can be installed with [Homebrew](https://brew.sh/
 # Installation
 
 via curl:  
-```sh -c "$(curl -fsSL https://raw.github.com/jeschu/mtr/install-mtr.sh)"```
+```sh -c "$(curl -fsSL https://raw.github.com/jeschu/mtr/master/install-mtr.sh)"```
 
 via wget:  
-```sh -c "$(wget https://raw.github.com/jeschu/mtr/install-mtr.sh -O -)"```
+```sh -c "$(wget https://raw.github.com/jeschu/mtr/master/install-mtr.sh -O -)"```
 
 Installs a bash script at `/usr/local/bin/mtr`.  
 The script executes the following docker run command:  

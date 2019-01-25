@@ -13,6 +13,8 @@ Mac OS is missing mtr tool. It can be installed with [Homebrew](https://brew.sh/
 
 # Installation
 
+Installation requires sudo - you will be prompted for your password.
+
 via curl:  
 ```sh -c "$(curl -fsSL https://raw.github.com/jeschu/mtr/master/install-mtr.sh)"```
 

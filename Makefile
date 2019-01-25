@@ -1,18 +1,18 @@
 version=0
 image=mtr
-registry=docker-registry.webtravel.de
+account=jeschu
 
 default: build
 
 build:
-	docker build -t ${registry}/${image}:${version} .
+	docker build -t ${account}/${image}:${version} .
 
 tag: build
-	docker tag ${registry}/${image}:${version} ${registry}/${image}:latest
+	docker tag ${account}/${image}:${version} ${account}/${image}:latest
 
 push: tag
-	docker push ${registry}/${image}:latest
-	docker push ${registry}/${image}:${version}
+	docker push ${account}/${image}:latest
+	docker push ${account}/${image}:${version}
 
 run:
-	docker run -it --rm --name mtr-$(uuidgen) ${registry}/${image}:${version} google.de
+	docker run -it --rm --name mtr-$(uuidgen) ${account}/${image}:${version} --help

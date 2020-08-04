@@ -1,4 +1,4 @@
-version=0
+version=1
 image=mtr
 account=jeschu
 
@@ -15,4 +15,7 @@ push: tag
 	docker push ${account}/${image}:${version}
 
 run:
+	docker run -it --rm --name mtr-$(uuidgen) ${account}/${image}:${version} 8.8.8.8
+
+run-help:
 	docker run -it --rm --name mtr-$(uuidgen) ${account}/${image}:${version} --help

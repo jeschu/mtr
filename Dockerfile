@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:3.12
 LABEL maintainer="Jens Schumacher <jeschu@ok.de>" \
       repository="https://github.com/jeschu/mtr" \
       image="jeschu/mtr:latest" \

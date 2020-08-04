@@ -35,3 +35,7 @@ The script executes the following docker run command:
 docker image rm -f jeschu/mtr:latest    # remove docker image
 sudo rm -v /usr/local/bin/mtr           # remove shell script
 ```
+
+# Image on Docker Hub
+
+https://hub.docker.com/r/jeschu/mtr

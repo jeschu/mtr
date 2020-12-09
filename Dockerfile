@@ -1,7 +1,6 @@
-FROM alpine:3.12
+FROM alpine:3.12.1
 LABEL maintainer="Jens Schumacher <jeschu@ok.de>" \
       repository="https://github.com/jeschu/mtr" \
-      image="jeschu/mtr:latest" \
       cmdline="docker run -it --rm --name mtr-$(uuidgen) jeschu/mtr --displaymode 2 google.de"
 
 RUN apk add --no-cache mtr

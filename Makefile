@@ -1,4 +1,4 @@
-version=0.94
+version=0.95
 image=mtr
 account=jeschu
 
@@ -6,6 +6,9 @@ default: build
 
 build:
 	docker build -t ${account}/${image}:${version} .
+
+scan:
+	docker scan ${account}/${image}:${version}
 
 tag: build
 	docker tag ${account}/${image}:${version} ${account}/${image}:latest
@@ -19,3 +22,6 @@ run:
 
 run-help:
 	docker run -it --rm --name mtr-$(uuidgen) ${account}/${image}:${version} --help
+
+run-version:
+	docker run -it --rm --name mtr-$(uuidgen) ${account}/${image}:${version} --version

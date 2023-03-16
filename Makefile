@@ -1,27 +1,15 @@
-version=0.95.1
+version=0.95.2
 image=mtr
 account=jeschu
 
-default: build
+default: build scan run-version
 
 build:
-	docker build -t ${account}/${image}:${version} .
+	docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t ${account}/${image}:${version} --push .
+	docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t ${account}/${image}:latest --push .
 
 scan:
-	docker scan ${account}/${image}:${version}
-
-tag: build
-	docker tag ${account}/${image}:${version} ${account}/${image}:latest
-
-push: tag
-	docker push ${account}/${image}:latest
-	docker push ${account}/${image}:${version}
-
-run:
-	docker run -it --rm --name mtr-$(uuidgen) ${account}/${image}:${version} 8.8.8.8
-
-run-help:
-	docker run -it --rm --name mtr-$(uuidgen) ${account}/${image}:${version} --help
+	docker scout cves ${account}/${image}:${version}
 
 run-version:
-	docker run -it --rm --name mtr-$(uuidgen) ${account}/${image}:${version} --version
+	DOCKER_DEFAULT_PLATFORM=linux/amd64 docker run -it --rm --name mtr-$(uuidgen) ${account}/${image}:${version} --version

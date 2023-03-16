@@ -2,6 +2,8 @@
 
 Builds a docker image containing mtr (My traceroute).
 
+include::CHANGELOG.adoc[]
+
 == Motivation
 
 Mac OS is missing mtr tool. It can be installed with https://brew.sh/[Homebrew] but has to be run with `sudo`.

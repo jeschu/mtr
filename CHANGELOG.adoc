@@ -1,5 +1,16 @@
 == Changelog
 
+=== 0.95.3
+
+* added multiplatform build for:
+** linux/amd64/v2
+** linux/riscv64
+** linux/ppc64le
+** linux/s390x
+** linux/386
+** linux/arm/v6
+* updated base image to alpine:3.20.0
+
 === 0.95.2
 
 * added multiplatform build for:

@@ -1,4 +1,4 @@
-FROM alpine:3.20.0
+FROM alpine:3.22.0
 LABEL maintainer="Jens Schumacher <js.dev@familie-schumacher.info>" \
       repository="https://github.com/jeschu/mtr" \
       cmdline="docker run -it --rm --name mtr-$(uuidgen) jeschu/mtr --displaymode 2 google.de"

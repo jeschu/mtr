@@ -1,4 +1,4 @@
-version=0.95.3
+version=0.96
 image=mtr
 account=jeschu
 
